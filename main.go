@@ -1,5 +1,9 @@
 package main
 
+import (
+	"go-noob/greet"
+)
+
 func main() {
-    SayHello("oNqNu")
+    greet.SayHello("yuma")
 }
