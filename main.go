@@ -6,9 +6,12 @@ import (
 )
 
 func main() {
+    const question = "名前を入力してください: "
+
     var name string
 
-    fmt.Print("名前を入力してください: ")
+    fmt.Print(question)
     fmt.Scanln(&name)
+    
     greet.SayHello(name)
 }
