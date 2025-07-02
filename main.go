@@ -1,9 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"go-noob/greet"
 )
 
 func main() {
-    greet.SayHello("yuma")
+    var name string
+
+    fmt.Print("名前を入力してください: ")
+    fmt.Scanln(&name)
+    greet.SayHello(name)
 }
