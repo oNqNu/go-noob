@@ -6,12 +6,12 @@ import (
 )
 
 func main() {
-    const question = "名前を入力してください: "
+	const question = "名前を入力してください: "
 
-    var name string
+	var name string
 
-    fmt.Print(question)
-    fmt.Scanln(&name)
-    
-    greet.SayHello(name)
+	fmt.Print(question)
+	fmt.Scanln(&name)
+
+	greet.SayHello(name)
 }
