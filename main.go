@@ -8,12 +8,12 @@ import (
 
 func main() {
 	router := gin.Default()
+	router.LoadHTMLGlob("htmlTemplate/*")
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
+	router.GET("/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"title": "Main website",
 		})
 	})
-
-	router.Run() // listen and serve on 0.0.0.0:8080
+	router.Run(":8080")
 }
