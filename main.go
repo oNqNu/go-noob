@@ -1,17 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"go-noob/greet"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	const question = "名前を入力してください: "
+	router := gin.Default()
 
-	var name string
+	router.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
 
-	fmt.Print(question)
-	fmt.Scanln(&name)
-
-	greet.SayHello(name)
+	router.Run() // listen and serve on 0.0.0.0:8080
 }
