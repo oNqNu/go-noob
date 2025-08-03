@@ -10,6 +10,12 @@ func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("htmlTemplate/*")
 
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "hello go",
+		})
+	})
+
 	router.GET("/index", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"title":    "gin で作った api サーバーから html を返せたよ ><",
